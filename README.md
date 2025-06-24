@@ -29,17 +29,12 @@ nba_mvp/
 
 1. Clone the repository:
 
-git clone https://github.com/devin476/NBA-MVP-Prediction  
-cd NBA-MVP-Prediction
+```git clone https://github.com/devin476/NBA-MVP-Prediction```  
+```cd NBA-MVP-Prediction```
 
-2. (Optional) Create a virtual environment:
+2. Install dependencies:
 
-python -m venv venv  
-source venv/bin/activate  (on Windows: venv\Scripts\activate)
-
-3. Install dependencies:
-
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 ## Usage
 
@@ -47,7 +42,7 @@ pip install -r requirements.txt
 
 Run:
 
-python -m nba_mvp.main --mode update-data --data nba_mvp/data
+```python -m nba_mvp.main --mode update-data --data nba_mvp/data```
 
 
 ### Train the MVP Prediction Model
@@ -56,7 +51,7 @@ Ensure CSVs are stored in nba_mvp/data/ and named like nba_player_stats_YYYY_YY.
 
 Run:
 
-python -m nba_mvp.model.train
+```python -m nba_mvp.model.train```
 
 This will save:
 - The model to nba_mvp/model/mvp_model.joblib  
@@ -67,7 +62,7 @@ This will save:
 
 Run predictions on new season data:
 
-python -m nba_mvp.model.predict --csv nba_mvp/data/nba_player_stats_2024_25.csv
+```python -m nba_mvp.model.predict --csv nba_mvp/data/nba_player_stats_2024_25.csv```
 
 It will output a list of players with their predicted MVP probabilities.
 
@@ -96,7 +91,7 @@ Major libraries:
 
 Install with:
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 ## Contact
 
