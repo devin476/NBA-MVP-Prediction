@@ -15,8 +15,8 @@ nba_mvp/<br>
 │   └── features.py          # Feature engineering functions<br>
 └── main.py                  # CLI to update, train, or predict<br>
 
-requirements.txt             # Python dependencies
-README.md                    # Project documentation
+requirements.txt             # Python dependencies<br>
+README.md                    # Project documentation<br>
 ## Installation
 
 1. Clone the repository:
