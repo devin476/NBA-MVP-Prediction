@@ -1,17 +1,22 @@
 import os
 import json
+import argparse
 import joblib
 import pandas as pd
 from nba_mvp.utils.features import engineer_features
 
 
-def run_prediction(season="2024-25", data_dir="nba_mvp/data"):
-    # Paths
+def run_prediction(season: str = "2024-25",
+                   data_dir: str = "nba_mvp/data",
+                   csv_path: str | None = None) -> None:
+    """Run MVP predictions for a given season or CSV file."""
     model_path = os.path.join("nba_mvp", "model", "mvp_model.joblib")
     feature_path = os.path.join("nba_mvp", "model", "features.json")
     threshold_path = os.path.join("nba_mvp", "model", "threshold.json")
-    csv_file = f"nba_player_stats_{season.replace('-', '_')}.csv"
-    csv_path = os.path.join(data_dir, csv_file)
+
+    if csv_path is None:
+        csv_file = f"nba_player_stats_{season.replace('-', '_')}.csv"
+        csv_path = os.path.join(data_dir, csv_file)
 
     # Load model and features
     model = joblib.load(model_path)
@@ -52,4 +57,24 @@ def run_prediction(season="2024-25", data_dir="nba_mvp/data"):
 
 
 if __name__ == "__main__":
-    run_prediction()
+    parser = argparse.ArgumentParser(description="Predict NBA MVP probabilities")
+    parser.add_argument(
+        "--csv",
+        type=str,
+        help="Path to a CSV file of player stats. Overrides --season and --data-dir",
+    )
+    parser.add_argument(
+        "--season",
+        type=str,
+        default="2024-25",
+        help="Season to predict if --csv is not provided",
+    )
+    parser.add_argument(
+        "--data-dir",
+        dest="data_dir",
+        default="nba_mvp/data",
+        help="Directory containing season CSVs",
+    )
+
+    args = parser.parse_args()
+    run_prediction(season=args.season, data_dir=args.data_dir, csv_path=args.csv)
