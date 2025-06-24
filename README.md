@@ -8,22 +8,21 @@ This project builds a machine learning model to predict the NBA MVP (Most Valuab
 nba_mvp/  
 ├── __init__.py  
 ├── data/                      #Historical NBA player data from 1996-2024 (CSV format)  
-│  
+│   ├── __init__.py  
+│   ├── mvps_by_season.py      #NBA MVPs 1996-2024 
+│   └── update_data.py         #Downloads player stats 
 ├── model/  
 │   ├── __init__.py  
 │   ├── train.py               #Trains and saves the MVP prediction model  
-│   ├── predict.py             #Uses trained model to predict MVP probabilities  
-│   ├── mvp_model.joblib       #Saved XGBoost model  
-│   └── features.json          #List of features used in the model  
+│   └── predict.py             #Uses trained model to predict MVP probabilities   
 │  
 ├── utils/  
 │   ├── __init__.py  
-│   └── features.py            #Feature engineering functions  
-│   
+│   └── features.py            #Feature engineering functions     
 │  
-├── main.py                    #CLI to run training or prediction  
-├── requirements.txt           #Python dependencies  
-└── README.md                  #Documentation
+└──  main.py                   #CLI to run training or prediction  
+requirements.txt               #Python dependencies  
+README.md                      #Documentation
 
 ## Installation
 
