@@ -4,16 +4,16 @@ XGBoost model with 96% Top-1 Accuracy
 This project builds a machine learning model to predict the NBA MVP (Most Valuable Player) based on player statistics from the 1996–2024 NBA seasons. It includes automated feature engineering, model training with XGBoost for exploring MVP predictions.
 
 ## Project Structure
-nba_mvp/
-├── data/
-│   ├── mvps_by_season.py    # MVP IDs by season
-│   └── update_data.py       # Download player stats
-├── model/
-│   ├── train.py             # Train & save model
-│   └── predict.py           # Load model & predict
-├── utils/
-│   └── features.py          # Feature engineering functions
-└── main.py                  # CLI to update, train, or predict
+nba_mvp/<br>
+├── data/<br>
+│   ├── mvps_by_season.py    # MVP IDs by season<br>
+│   └── update_data.py       # Download player stats<br>
+├── model/<br>
+│   ├── train.py             # Train & save model<br>
+│   └── predict.py           # Load model & predict<br>
+├── utils/<br>
+│   └── features.py          # Feature engineering functions<br>
+└── main.py                  # CLI to update, train, or predict<br>
 
 requirements.txt             # Python dependencies
 README.md                    # Project documentation
