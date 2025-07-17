@@ -66,7 +66,7 @@ It will output a list of players with their predicted MVP probabilities.
   - Dominance Score
   - Field Goals Made Per Min
   - Points Per Win
-  - Year over Year Points Delta 
+  - Usage Proxy 
 - XGBoost classifier with class imbalance handling  
 - Threshold optimization using precision-recall balance   
 
